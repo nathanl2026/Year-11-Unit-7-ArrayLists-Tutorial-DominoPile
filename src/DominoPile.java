@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class DominoPile {
     private ArrayList<Domino> pile;
@@ -15,6 +16,14 @@ public class DominoPile {
     }
     public void shuffle() {
         ArrayList<Domino> hold = new ArrayList<>();
-        hold.add()
+        Random random = new Random();
+        while (pile.size() > 0) {
+            Domino removedDomino = pile.remove(random.nextInt(0, pile.size()));
+            hold.add(removedDomino);
+            //  (simplier expression, plug in removed domino to the add part below
+            //  for one simpler single line expression)
+            //  hold.add(pile.remove(random.nextInt(0, pile.size())));
+        }
+        pile = hold;
     }
 }
