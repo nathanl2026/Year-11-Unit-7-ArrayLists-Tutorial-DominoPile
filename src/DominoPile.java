@@ -4,6 +4,10 @@ import java.util.Random;
 public class DominoPile {
     private ArrayList<Domino> pile;
 
+    public ArrayList<Domino> getPile(){
+        return pile;
+    }
+
     public DominoPile(){
         pile = new ArrayList<>();
     }

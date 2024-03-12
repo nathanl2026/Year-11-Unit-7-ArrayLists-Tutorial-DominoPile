@@ -39,17 +39,39 @@ public class Domino {
         }
     }
     public int compareTo(Domino other){
-        if (this.top < other.top) {
+        int thisSmaller;
+        int thisLarger;
+        int otherSmaller;
+        int otherLarger;
+
+        if (this.top > this.bottom) {
+            thisSmaller = this.bottom;
+            thisLarger = this.top;
+        }
+        else {
+            thisSmaller = this.top;
+            thisLarger = this.bottom;
+        }
+        if (this.top > other.bottom) {
+            otherSmaller = other.bottom;
+            otherLarger = other.top;
+        }
+        else {
+            otherSmaller = other.top;
+            otherLarger = other.bottom;
+        }
+
+        if (thisSmaller < otherSmaller) {
             return -1;
         }
-        else if (this.top > other.top) {
+        else if (thisSmaller > otherSmaller) {
             return 1;
         }
         else {
-            if (this.bottom < other.bottom) {
+            if (thisLarger < otherLarger) {
                 return -1;
             }
-            else if (this.bottom > other.bottom) {
+            else if (thisLarger > otherLarger) {
                 return 1;
             }
             else {
